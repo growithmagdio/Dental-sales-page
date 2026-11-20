@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The New Patient Pipeline™ — Magdio for Dental Practices</title>
+<meta name="description" content="Done-for-you new patient acquisition for dental practices. 30 new patients in 90 days — or your money back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#201652; --sky:#B6DEFF; --bg:#EEF4F8; --grey:#CBD5E0; --blue:#1A73E8; --blue2:#0B5CD5;
+  --ink:#111; --muted:#4a5568; --line:#E2E8F0; --green:#16A34A; --gold:#F5B301;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.ub{font-family:Ubuntu,Montserrat,sans-serif}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.center{text-align:center}
+.btn{display:inline-block;background:#000;color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:16px 34px;border-radius:15px;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.btn.blue{background:var(--blue)}
+u{text-underline-offset:4px}
+
+/* ---------- top bar + hero ---------- */
+.topbar{background:#000;color:#fff;text-align:center;padding:14px 16px 18px}
+.topbar p{font-size:13px;font-weight:500;margin-bottom:14px}
+.topbar p b{font-weight:700}
+.logo{display:inline-flex;align-items:center;gap:12px;background:#0b1430;padding:10px 18px;border-radius:4px}
+.logo .wm{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+.logo .wm b{font-family:Montserrat;font-weight:800;font-size:26px;letter-spacing:.5px;color:#fff}
+.logo .wm small{font-size:8.5px;font-weight:700;letter-spacing:1.6px;color:#cfd8ee;margin-top:4px}
+.hero{position:relative;color:#fff;text-align:center;padding:90px 20px 84px;overflow:hidden;
+  background:
+   radial-gradient(1000px 420px at 78% 30%,rgba(120,170,230,.35),transparent 60%),
+   radial-gradient(700px 380px at 12% 90%,rgba(255,255,255,.10),transparent 60%),
+   linear-gradient(135deg,#2b3340 0%,#3f4a59 45%,#222831 100%)}
+.hero svg.bgtooth{position:absolute;right:-60px;top:-30px;width:420px;opacity:.08}
+.hero svg.bgtooth.l{left:-90px;right:auto;top:auto;bottom:-80px;width:300px;opacity:.06;transform:rotate(-14deg)}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:700;text-shadow:0 2px 14px rgba(0,0,0,.35);position:relative}
+.hero .tag{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 26px;margin-top:10px;font-weight:700;font-size:clamp(14px,1.7vw,17px);position:relative}
+.hero .btn{margin-top:30px;position:relative;background:#fff;color:#000}
+
+/* ---------- section helpers ---------- */
+.sec{padding:60px 0}
+.bg{background:var(--bg)}
+.skybar{background:var(--sky);text-align:center;padding:16px 20px;font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-weight:700;font-size:clamp(19px,2.4vw,26px);margin:0 auto;max-width:1000px}
+.rule{width:110px;height:2px;background:#111;margin:26px auto}
+.band{background:var(--navy);color:#fff;text-align:center;padding:22px 20px}
+.band h2{font-size:clamp(26px,3.6vw,38px);letter-spacing:.5px}
+.stephead{background:var(--grey);text-align:center;padding:24px 20px}
+.stephead .n{font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-weight:700;font-size:clamp(24px,3vw,32px);text-decoration:underline;text-underline-offset:5px}
+.stephead h2{font-size:clamp(24px,3.2vw,34px);margin-top:4px}
+.lead{text-align:center;font-weight:600;font-size:16px;margin:28px auto}
+.result{text-align:center;margin:34px auto 0}
+.result small{display:block;font-weight:700;font-size:15px;color:var(--muted);letter-spacing:.5px}
+.result b{font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-size:clamp(20px,2.6vw,28px)}
+
+/* ---------- benefits ---------- */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 40px;max-width:1000px;margin:10px auto 0}
+.benefit{text-align:center}
+.benefit .ic{width:46px;height:46px;border-radius:12px;background:#fff;display:grid;place-items:center;margin:0 auto 10px;box-shadow:0 4px 14px rgba(26,115,232,.15)}
+.benefit h3{font-family:Montserrat;font-weight:700;font-size:16.5px;margin-bottom:8px}
+.benefit p{font-size:13.5px;color:#333}
+.benefit p u{text-decoration-thickness:1px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+.chip{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600}
+.chip i{width:22px;height:22px;border-radius:50%;background:var(--blue);display:grid;place-items:center;color:#fff;font-style:normal;font-size:12px}
+
+/* ---------- overview cycle ---------- */
+.overview-intro{text-align:center;font-size:16px;max-width:820px;margin:36px auto 30px}
+.cycle{position:relative;max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto auto;gap:12px;align-items:center;justify-items:center}
+.node{text-align:center;max-width:230px}
+.node .lab{font-weight:800;color:var(--blue2);font-size:13px;letter-spacing:.5px;text-align:left;margin-bottom:4px}
+.node .pill{display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,#2b86ff,#1565e0);color:#fff;border-radius:12px;padding:10px 14px;font-weight:700;font-size:14.5px;line-height:1.2;text-align:left;box-shadow:0 8px 18px rgba(21,101,224,.25)}
+.node .pill svg{flex:none}
+.node p{font-size:12.5px;color:#333;margin-top:8px}
+.hub{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3d97ff,#1257c9);color:#fff;display:grid;place-items:center;text-align:center;font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-weight:700;font-size:21px;line-height:1.1;box-shadow:0 0 0 10px #e3efff,0 14px 30px rgba(18,87,201,.35)}
+.n1{grid-column:2;grid-row:1}.n2{grid-column:3;grid-row:2}.n3{grid-column:2;grid-row:3}.n4{grid-column:1;grid-row:2}.hubc{grid-column:2;grid-row:2}
+.cycle svg.arrows{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+
+/* ---------- generic cards / mockups ---------- */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px rgba(15,40,80,.08)}
+.flow{display:grid;grid-template-columns:1.25fr auto 1fr auto 1.15fr;gap:14px;align-items:center;max-width:1060px;margin:34px auto 0}
+.arrow{font-size:30px;color:var(--blue);font-weight:700;text-align:center}
+.blueBox{background:linear-gradient(180deg,#1f7cf5,#1257c9);color:#fff;border-radius:18px;padding:26px 20px;text-align:center;box-shadow:0 16px 36px rgba(18,87,201,.3)}
+.blueBox h3{font-size:26px;margin-bottom:10px}
+.blueBox p{font-size:13.5px;opacity:.95}
+.blueBox .chan{display:flex;justify-content:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.blueBox .chan span{background:rgba(255,255,255,.18);border-radius:999px;padding:4px 11px;font-size:12px;font-weight:700}
+.tbl{padding:16px}
+.tbl h4{font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-size:17px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.tbl h4 em{font-style:normal;font-family:Montserrat;font-size:11px;background:#eef2ff;color:#3730a3;padding:3px 8px;border-radius:999px}
+.row{display:grid;grid-template-columns:26px 1fr auto;gap:8px;align-items:center;padding:7px 0;border-top:1px solid #f0f2f5;font-size:12px}
+.av{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:800}
+.row .nm{font-weight:700}
+.row .sub{display:block;color:#6b7280;font-weight:500;font-size:11px}
+.tagp{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.t-red{background:#fee2e2;color:#b91c1c}.t-amb{background:#fef3c7;color:#92400e}.t-blu{background:#dbeafe;color:#1e40af}.t-grn{background:#dcfce7;color:#166534}.t-pur{background:#ede9fe;color:#5b21b6}
+.appt{display:grid;grid-template-columns:44px 10px 1fr;gap:10px;align-items:center;padding:8px 0;border-top:1px solid #f0f2f5;font-size:12px}
+.appt .d{font-weight:800;font-size:12px;line-height:1.1}.appt .d small{display:block;font-weight:500;color:#6b7280;font-size:10.5px}
+.dot{width:9px;height:9px;border-radius:50%}
+.appt b{display:block;font-size:12.5px}.appt span{color:#6b7280;font-size:11px}
+.downwrap{display:flex;justify-content:flex-end;max-width:1060px;margin:10px auto 0}
+.newbox{display:flex;gap:14px;align-items:center;background:#eaf3ff;border:1px solid #b9d6ff;border-radius:16px;padding:16px 18px;max-width:380px}
+.newbox .ci{width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.newbox h4{font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-size:19px}.newbox p{font-size:12.5px;color:#333}
+
+/* example messages */
+.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1060px;margin:28px auto 0}
+.ex{padding:16px;display:flex;flex-direction:column}
+.ex .kind{font-size:11px;font-weight:800;letter-spacing:.6px;color:var(--blue2);text-transform:uppercase;margin-bottom:10px}
+.phone{background:#f8fafc;border-radius:14px;padding:12px;flex:1}
+.phone .who{display:flex;flex-direction:column;align-items:center;margin-bottom:10px;font-size:11px;color:#6b7280}
+.phone .who i{width:34px;height:34px;border-radius:50%;background:#cbd5e1;display:grid;place-items:center;font-style:normal;font-weight:800;color:#fff;margin-bottom:4px}
+.bub{max-width:86%;padding:9px 12px;border-radius:16px;font-size:12.5px;margin:6px 0;line-height:1.4}
+.bub.out{background:#1a7cf5;color:#fff;margin-left:auto;border-bottom-right-radius:5px}
+.bub.in{background:#e5e7eb;color:#111;border-bottom-left-radius:5px}
+.bub.status{background:none;color:#6b7280;font-size:10.5px;text-align:right;padding:0 4px;margin:0 0 0 auto}
+.mail{flex:1;font-size:12.5px}
+.mail .hd{border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:10px;font-size:11.5px;color:#6b7280}
+.mail .hd b{color:#111;display:block;font-size:13.5px;margin-top:4px}
+.mail p{margin-bottom:8px;color:#222}
+.mail .cta{display:inline-block;background:var(--blue);color:#fff;font-weight:700;font-size:12px;padding:7px 12px;border-radius:8px;margin:2px 0 8px}
+.steps{margin-top:10px;border-top:1px solid var(--line);padding-top:8px;font-size:11.5px}
+.steps div{display:flex;justify-content:space-between;padding:3px 0}
+.steps div span:last-child{color:#6b7280}
+.ck{display:inline-grid;place-items:center;width:14px;height:14px;border-radius:3px;border:1.5px solid #94a3b8;margin-right:6px;font-size:9px;vertical-align:-2px}
+.ck.on{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* step 2 */
+.flow2{display:grid;grid-template-columns:1.35fr auto .8fr auto 1.15fr;gap:14px;align-items:center;max-width:1080px;margin:34px auto 0}
+.serp{padding:16px}
+.sbar{display:flex;align-items:center;gap:10px;border:1px solid #dfe1e5;border-radius:999px;padding:9px 14px;font-size:13px;box-shadow:0 1px 6px rgba(32,33,36,.12)}
+.tabs{display:flex;gap:14px;font-size:11.5px;color:#5f6368;margin:10px 0 12px;padding-left:4px}
+.tabs b{color:var(--blue);border-bottom:2px solid var(--blue);padding-bottom:3px}
+.lp{display:grid;grid-template-columns:1fr 130px;gap:12px}
+.biz{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:11.5px;margin-bottom:8px;display:grid;grid-template-columns:20px 1fr;gap:8px}
+.biz.top{border:2px solid var(--blue);background:#f5f9ff}
+.biz .rk{width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:11px}
+.biz b{display:block;font-size:12.5px}
+.stars{color:#f59e0b;letter-spacing:1px}
+.biz .op{color:var(--green);font-weight:600}
+.map{border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.ai{margin-top:10px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:11.5px;background:linear-gradient(180deg,#f7f9ff,#fff)}
+.ai b.h{display:flex;align-items:center;gap:6px;font-size:13px;margin-bottom:5px}
+.ai a{color:var(--blue);font-weight:700;text-decoration:none}
+.techBox{background:linear-gradient(180deg,#1f7cf5,#1257c9);color:#fff;border-radius:18px;padding:22px 16px;text-align:center;box-shadow:0 16px 36px rgba(18,87,201,.3)}
+.techBox .ic{width:66px;height:66px;border-radius:50%;background:#fff;display:grid;place-items:center;margin:0 auto 12px}
+.techBox h3{font-size:21px;line-height:1.15;margin-bottom:10px}
+.techBox p{font-size:12.5px;opacity:.95}
+.inq{padding:0;overflow:hidden}
+.inq .top{background:linear-gradient(180deg,#1f7cf5,#1565e0);color:#fff;padding:16px 18px;display:flex;gap:12px;align-items:center}
+.inq .top .ci{width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.inq .top h4{font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-size:20px}.inq .top p{font-size:11.5px;opacity:.95}
+.inq .it{display:grid;grid-template-columns:34px 1fr auto;gap:10px;padding:10px 14px;border-top:1px solid #f0f2f5;font-size:11.5px;align-items:start}
+.inq .it .ii{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:14px}
+.inq .it b{display:block;font-size:12.5px}
+.inq .it span{color:#6b7280;font-size:10.5px}
+.inq .it q{display:block;color:#333;quotes:none;margin-top:2px}
+
+/* step 3 */
+.flow3{display:grid;grid-template-columns:.8fr auto 1.1fr auto 1.1fr;gap:14px;align-items:center;max-width:1080px;margin:34px auto 0}
+.channels{padding:14px}
+.channels h4{font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-size:16px;margin-bottom:8px;text-align:center}
+.chn{display:flex;align-items:center;gap:10px;padding:9px 6px;border-top:1px solid #f0f2f5;font-size:12.5px;font-weight:600}
+.chn i{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:#fff;font-style:normal;font-size:14px}
+.coord ul{list-style:none;text-align:left;margin-top:12px}
+.coord li{display:flex;gap:10px;align-items:flex-start;font-size:13px;padding:6px 0;border-top:1px solid rgba(255,255,255,.18)}
+.coord li span{width:20px;height:20px;border-radius:50%;background:#fff;color:var(--blue2);display:grid;place-items:center;font-weight:800;font-size:11px;flex:none;margin-top:1px}
+
+/* step 4 */
+.ex4{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:1060px;margin:0 auto}
+.ex4 .skybar{font-size:20px;margin-bottom:14px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px}
+.rev{font-size:11.5px;border-top:1px solid #f0f2f5;padding:7px 0}
+.rev b{font-size:12px}
+.rev p{color:#333;margin-top:2px}
+.confirm{display:flex;gap:10px;align-items:center;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:10px 12px;font-size:12px;margin-top:10px}
+.confirm i{width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:800;flex:none}
+
+/* ROI */
+.roiCtl{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:center;align-items:center;margin:20px auto 22px;font-size:13.5px;font-weight:600}
+.roiCtl label{display:flex;align-items:center;gap:8px}
+.roiCtl input{width:110px;padding:8px 10px;border:1.5px solid #cbd5e1;border-radius:10px;font:inherit;font-weight:700}
+.roiTable{width:100%;max-width:1000px;margin:0 auto;border-collapse:separate;border-spacing:0;font-size:13.5px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(15,40,80,.08)}
+.roiTable th,.roiTable td{padding:12px 10px;text-align:center;border-bottom:1px solid #edf2f7}
+.roiTable thead th{background:var(--navy);color:#fff;font-weight:700;font-size:13px}
+.roiTable thead tr:first-child th{background:#140d3a}
+.roiTable td:first-child,.roiTable th:first-child{text-align:left;font-weight:700}
+.roiTable tr.tot td{background:#fffbea;font-weight:800}
+.c-con{background:#fff7d6}.c-base{background:#e9f7ee}.c-up{background:#e8f1ff}
+.disc{max-width:900px;margin:16px auto 0;text-align:center;font-size:12px;color:var(--muted);font-style:italic}
+
+/* compare */
+.myth{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:28px auto 0}
+.myth .card{padding:24px}
+.myth .k{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.myth h3{font-size:22px;margin:6px 0 8px}
+.myth p{font-size:14px;color:#333}
+.cmp{width:100%;max-width:1000px;margin:26px auto 0;border-collapse:separate;border-spacing:0;font-size:13.5px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(15,40,80,.08)}
+.cmp th,.cmp td{padding:13px 12px;border-bottom:1px solid #edf2f7;text-align:center}
+.cmp th{background:#f1f5f9;font-size:12.5px}
+.cmp th.us{background:var(--blue);color:#fff}
+.cmp td:first-child,.cmp th:first-child{text-align:left;font-weight:600}
+.cmp td.us{background:#f0f7ff;font-weight:800;color:var(--blue2)}
+.yes{color:var(--green);font-weight:800}.no{color:#cbd5e1;font-weight:800}
+
+/* guarantee */
+.guar h2{font-size:clamp(24px,3.4vw,36px);font-family:Montserrat;font-weight:700}
+.guar .sub{font-size:16px;margin-top:6px}
+.guar .seal{width:210px;margin:26px auto}
+.guar p.body{max-width:900px;margin:0 auto;font-size:16px}
+.guar .fine{max-width:860px;margin:16px auto 0;font-size:12px;color:var(--muted)}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1000px;margin:34px auto 0;align-items:start}
+.plan{border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 14px 40px rgba(15,40,80,.12);border:1px solid var(--line)}
+.plan .ph{background:var(--sky);text-align:center;padding:20px 18px 16px}
+.plan .ph small{font-weight:700;font-size:13px}
+.plan .ph h3{font-size:clamp(22px,2.6vw,30px);margin:4px 0 8px}
+.plan .ph .wi{font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-weight:700;font-size:20px;text-decoration:underline;text-underline-offset:4px}
+.plan ul{list-style:none}
+.plan li{text-align:center;padding:12px 18px;font-size:14px;font-weight:700;font-style:italic;border-top:1px solid #eef2f7}
+.plan li:nth-child(even){background:#f6f6f6}
+.plan li .cm{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#2b86ff;color:#fff;font-size:10px;font-style:normal;margin-right:6px;vertical-align:-2px}
+.plan li small{display:block;font-weight:500;font-size:11.5px;color:#555}
+.plan li .subl{display:block;font-weight:500;font-style:normal;font-size:13px;color:#333;padding-top:6px}
+.plan .pf{text-align:center;padding:26px 18px 30px;border-top:1px solid #eef2f7}
+.plan .price{font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-size:56px;font-weight:700;line-height:1}
+.plan .price sup{font-size:22px;vertical-align:28px}
+.plan .per{font-weight:700;margin-top:6px}
+.plan .note{font-size:13px;margin-top:4px}
+.plan .note2{font-size:12px;color:#555;margin:4px 0 18px}
+.addons{max-width:1000px;margin:28px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.addon{display:flex;gap:16px;align-items:center;padding:18px 20px}
+.addon .ai2{width:48px;height:48px;border-radius:14px;background:#eaf3ff;display:grid;place-items:center;flex:none}
+.addon h4{font-size:16px}.addon p{font-size:12.5px;color:#444}
+.addon .pr{margin-left:auto;text-align:right;font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-weight:700;font-size:22px;white-space:nowrap}
+.addon .pr small{display:block;font-family:Montserrat;font-size:11px;color:#6b7280;font-weight:600}
+.resp{max-width:1000px;margin:20px auto 0;font-size:12.5px;color:var(--muted);text-align:center}
+
+/* final cta + footer */
+.final{background:var(--navy);color:#fff;text-align:center;padding:64px 20px}
+.final h2{font-size:clamp(26px,3.6vw,40px);margin-bottom:10px}
+.final p{max-width:680px;margin:0 auto 26px;opacity:.9}
+.final .btn{background:#fff;color:#000}
+footer{background:#000;color:#9ca3af;text-align:center;font-size:12px;padding:22px 20px}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .benefits{grid-template-columns:1fr 1fr}
+  .flow,.flow2,.flow3{grid-template-columns:1fr}
+  .flow .arrow,.flow2 .arrow,.flow3 .arrow{transform:rotate(90deg)}
+  .downwrap{justify-content:center}
+  .examples{grid-template-columns:1fr}
+  .ex4,.myth,.plans,.addons{grid-template-columns:1fr}
+  .cycle{grid-template-columns:1fr;grid-template-rows:none}
+  .cycle>*{grid-column:1 !important;grid-row:auto !important}
+  .cycle .hubc{order:-1}
+  .cycle svg.arrows{display:none}
+  .roiTable,.cmp{font-size:12px}
+  .roiTable th,.roiTable td,.cmp th,.cmp td{padding:9px 5px}
+}
+@media (max-width:560px){
+  .benefits{grid-template-columns:1fr}
+  .pair{grid-template-columns:1fr}
+  .lp{grid-template-columns:1fr}
+  .addon{flex-wrap:wrap}
+  .tblwrap{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<header class="topbar">
+  <p>Helping Dental Practices … <b>Generate 30 New Patients in 90 Days</b> and <b>Become the #1 Go-To Dentist in Your Area</b></p>
+  <div class="logo" aria-label="Magdio — The AI Growth Studio">
+    <svg width="46" height="40" viewBox="0 0 46 40" aria-hidden="true">
+      <defs><linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1b5fe0"/><stop offset="1" stop-color="#4ea6ff"/></linearGradient></defs>
+      <rect x="4" y="24" width="7" height="14" rx="1" fill="url(#lg)"/>
+      <rect x="14" y="17" width="7" height="21" rx="1" fill="url(#lg)"/>
+      <rect x="24" y="10" width="7" height="28" rx="1" fill="url(#lg)"/>
+      <rect x="34" y="3" width="7" height="35" rx="1" fill="url(#lg)"/>
+      <path d="M2 33 L15 20 L22 26 L38 8" fill="none" stroke="#F5B301" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M31 6 L41 4 L39 14 Z" fill="#F5B301"/>
+    </svg>
+    <span class="wm"><b>MAGDIO</b><small>THE AI GROWTH STUDIO</small></span>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="bgtooth" viewBox="0 0 100 110" aria-hidden="true"><path d="M50 12c-9-8-26-9-35 1-9 10-7 28-2 42 4 12 5 26 8 38 2 9 11 11 14 2 3-10 5-24 15-24s12 14 15 24c3 9 12 7 14-2 3-12 4-26 8-38 5-14 7-32-2-42-9-10-26-9-35-1z" fill="#fff"/></svg>
+  <svg class="bgtooth l" viewBox="0 0 100 110" aria-hidden="true"><path d="M50 12c-9-8-26-9-35 1-9 10-7 28-2 42 4 12 5 26 8 38 2 9 11 11 14 2 3-10 5-24 15-24s12 14 15 24c3 9 12 7 14-2 3-12 4-26 8-38 5-14 7-32-2-42-9-10-26-9-35-1z" fill="#fff"/></svg>
+  <h1>The New Patient Pipeline™</h1>
+  <div class="tag"><span>Fill Empty Chairs.</span><span>Generate Reviews &amp; Referrals.</span><span>Become the #1 Dentist in Your Area.</span></div>
+  <a class="btn js-book" href="#pricing">Book My Free Strategy Session</a>
+</section>
+
+<!-- ===== WHY PRACTICES LOVE IT ===== -->
+<section class="sec bg">
+  <div class="wrap">
+    <div class="skybar">Why Both New &amp; Established Dental Practices Love Our System</div>
+    <div class="rule"></div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></div>
+        <h3>10+ Patients Back in the Chair within 7 Days</h3>
+        <p>We contact <u>your patient database</u> to reactivate inactive patients, unfinished treatment and old inquiries.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
+        <h3>Rank #1 on Google &amp; A.I. Search</h3>
+        <p>We use our <u>Local Search Positioning Technology™</u> to put you in front of people searching for a dentist near them.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <h3>24/7 Appointment Scheduling</h3>
+        <p>We handle <u>inbound and outbound calls, texts</u>, <u>emails &amp; social media messages</u> 24/7 so no new-patient inquiry slips away.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.2" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></div>
+        <h3>Done-For-You Confirmation &amp; Reminders</h3>
+        <p>While scheduling, we <u>qualify, confirm and remind</u> every patient — and follow up until they actually begin care.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1A73E8"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21.1l1.5-7L2 9.3l7-.8z"/></svg></div>
+        <h3>5x More Reviews, Family Referrals &amp; Recall Visits</h3>
+        <p>We contact <u>your patient list</u> to generate reviews, family referrals, recall visits and treatment-plan acceptance.</p>
+      </div>
+      <div class="benefit">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></div>
+        <h3>Certified and Experienced Team</h3>
+        <p>Over 1000+ Documented Hours of Marketing Training from Industry leaders.</p>
+      </div>
+    </div>
+    <div class="chips">
+      <div class="chip"><i>✓</i>Done-For-You Service</div>
+      <div class="chip"><i>✓</i>Patients, Not Just Appointments</div>
+      <div class="chip"><i>✓</i>90-Day Money-Back Guarantee</div>
+      <div class="chip"><i>✓</i>Cancel Anytime</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SYSTEM OVERVIEW ===== -->
+<div class="band"><h2>SYSTEM OVERVIEW</h2></div>
+<section class="sec">
+  <div class="wrap">
+    <p class="overview-intro"><b>The New Patient Pipeline™</b> is our unique <b>done-for-you patient acquisition system</b> for Dental Practices.</p>
+    <div class="cycle">
+      <svg class="arrows" viewBox="0 0 760 520" preserveAspectRatio="none" aria-hidden="true">
+        <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#222"/></marker></defs>
+        <path d="M500 70 Q640 90 660 170" fill="none" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+        <path d="M660 330 Q640 430 500 450" fill="none" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+        <path d="M260 450 Q120 430 100 330" fill="none" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+        <path d="M100 170 Q120 90 260 70" fill="none" stroke="#222" stroke-width="2" marker-end="url(#ah)"/>
+      </svg>
+      <div class="node n1"><div class="lab">STEP 1</div><div class="pill"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>New Patient Sprint</div><p>Reactivate inactive patients, unfinished treatment &amp; old inquiries via text, email &amp; calls.</p></div>
+      <div class="node n2"><div class="lab">STEP 2</div><div class="pill"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Rank #1 on Google &amp; AI</div><p>Capture high-intent people searching for a dentist on Google, Maps &amp; AI search.</p></div>
+      <div class="node n3"><div class="lab">STEP 3</div><div class="pill"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Done-For-You Appointment Scheduling</div><p>We respond, book, confirm &amp; remind — until they become patients.</p></div>
+      <div class="node n4"><div class="lab">STEP 4</div><div class="pill"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.6 5.7 21.1l1.5-7L2 9.3l7-.8z"/></svg>Reviews, Referrals &amp; Recall</div><p>Happy patients leave reviews, refer family &amp; come back on recall.</p></div>
+      <div class="hubc"><div class="hub">More<br>New<br>Patients</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP 1 ===== -->
+<div class="stephead"><div class="n">Step 1:</div><h2>New Patient Sprint</h2></div>
+<section class="sec bg" style="padding-top:10px">
+  <div class="wrap">
+    <p class="lead">Let us put 10+ patients back in your chairs in the next 7 days — from contacts you already have!</p>
+    <div class="skybar">We Call, Text &amp; Email Your Patient Database to Reactivate Missed Opportunities</div>
+
+    <div class="flow">
+      <div class="card tbl">
+        <h4>Your Patient Database <em>2,148 contacts</em></h4>
+        <div class="row"><div class="av" style="background:#dbeafe;color:#1e40af">SM</div><div><span class="nm">Sarah Mitchell</span><span class="sub">Last visit: 19 months ago</span></div><span class="tagp t-red">Inactive</span></div>
+        <div class="row"><div class="av" style="background:#dcfce7;color:#166534">DW</div><div><span class="nm">David Wilson</span><span class="sub">Crown — not scheduled</span></div><span class="tagp t-amb">Unfinished Tx</span></div>
+        <div class="row"><div class="av" style="background:#ede9fe;color:#5b21b6">PG</div><div><span class="nm">Priya Gupta</span><span class="sub">Invisalign inquiry — Mar</span></div><span class="tagp t-blu">Old Inquiry</span></div>
+        <div class="row"><div class="av" style="background:#fee2e2;color:#b91c1c">RJ</div><div><span class="nm">Robert Johnson</span><span class="sub">6-month recall overdue</span></div><span class="tagp t-pur">Recall Due</span></div>
+        <div class="row"><div class="av" style="background:#fef3c7;color:#92400e">EP</div><div><span class="nm">Emily Parker</span><span class="sub">Missed appointment — Jan</span></div><span class="tagp t-red">No-Show</span></div>
+        <div class="row"><div class="av" style="background:#e0f2fe;color:#075985">MG</div><div><span class="nm">Maria Garcia</span><span class="sub">Implant consult — not booked</span></div><span class="tagp t-amb">Unfinished Tx</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="blueBox">
+        <div class="chan"><span>📞 Calls</span><span>💬 SMS</span><span>✉️ Email</span></div>
+        <h3>We Reach Out</h3>
+        <p>We call, text and email your past patients, unscheduled treatment and old inquiries to restart the conversation, answer questions, and get them booked.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card tbl">
+        <h4>Booked Appointments <em>This Week</em></h4>
+        <div class="appt"><div class="d">Mon<small>Apr 15</small></div><div class="dot" style="background:#1A73E8"></div><div><b>New Patient Exam + X-rays</b><span>9:00 AM · Sarah Mitchell</span></div></div>
+        <div class="appt"><div class="d">Tue<small>Apr 16</small></div><div class="dot" style="background:#16A34A"></div><div><b>Crown Prep</b><span>11:00 AM · David Wilson</span></div></div>
+        <div class="appt"><div class="d">Wed<small>Apr 17</small></div><div class="dot" style="background:#F59E0B"></div><div><b>Invisalign Consultation</b><span>2:00 PM · Priya Gupta</span></div></div>
+        <div class="appt"><div class="d">Thu<small>Apr 18</small></div><div class="dot" style="background:#7C3AED"></div><div><b>Cleaning + Exam</b><span>10:30 AM · Robert Johnson</span></div></div>
+        <div class="appt"><div class="d">Fri<small>Apr 19</small></div><div class="dot" style="background:#16A34A"></div><div><b>Implant Consultation</b><span>1:00 PM · Maria Garcia</span></div></div>
+      </div>
+    </div>
+    <div class="downwrap">
+      <div class="newbox">
+        <div class="ci"><svg width="30" height="30" viewBox="0 0 100 110"><path d="M50 12c-9-8-26-9-35 1-9 10-7 28-2 42 4 12 5 26 8 38 2 9 11 11 14 2 3-10 5-24 15-24s12 14 15 24c3 9 12 7 14-2 3-12 4-26 8-38 5-14 7-32-2-42-9-10-26-9-35-1z" fill="#1A73E8"/></svg></div>
+        <div><h4>Patients Back in the Chair</h4><p>Turn dormant records into exams, cleanings, accepted treatment plans and new production.</p></div>
+      </div>
+    </div>
+
+    <div class="skybar" style="margin-top:46px">Example Outreach Messages:</div>
+    <div class="examples">
+      <div class="card ex">
+        <div class="kind">SMS · Inactive Patient</div>
+        <div class="phone">
+          <div class="who"><i>BD</i>Brightview Dental</div>
+          <div class="bub out">Hi Sarah, it's Brightview Dental 😊 It's been a while since we've seen you! We just opened a few exam spots next week. Want me to save one for you?</div>
+          <div class="bub in">Oh wow yes, it's been way too long. Do you have anything Monday morning?</div>
+          <div class="bub out">Perfect — Monday 9:00 AM is yours. I'll text you a reminder the day before!</div>
+          <div class="bub status">Delivered</div>
+        </div>
+      </div>
+      <div class="card ex">
+        <div class="kind">Email · Unfinished Treatment</div>
+        <div class="mail">
+          <div class="hd">From: Brightview Dental<b>David, your treatment plan is still on file</b></div>
+          <p>Hi David,</p>
+          <p>Dr. Lee noticed the crown we recommended at your last visit hasn't been scheduled yet. Leaving it too long can turn a simple fix into a bigger one.</p>
+          <p>We've held a few openings this week and can walk you through your insurance and payment options.</p>
+          <span class="cta">Pick a Time →</span>
+          <div class="steps">
+            <div><span><i class="ck on">✓</i>Send reminder</span><span>Today</span></div>
+            <div><span><i class="ck">&nbsp;</i>Follow-up call in 2 days</span><span>Scheduled</span></div>
+            <div><span><i class="ck">&nbsp;</i>Add to pipeline</span><span>Not started</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card ex">
+        <div class="kind">SMS · Old Inquiry</div>
+        <div class="phone">
+          <div class="who"><i style="background:#a78bfa">BD</i>Brightview Dental</div>
+          <div class="bub out">Hi Priya! You asked us about Invisalign a while back — are you still thinking about straightening your smile? We have free consultation slots this week 🙂</div>
+          <div class="bub in">Yes! I wasn't sure about the cost. Can I come in Wednesday?</div>
+          <div class="bub out">Absolutely. Wednesday 2:00 PM is booked — we'll go over pricing and payment plans at the visit.</div>
+          <div class="bub status">Read</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP 2 ===== -->
+<div class="stephead"><div class="n">Step 2:</div><h2>Ranking #1 on Google &amp; A.I. Search</h2></div>
+<section class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <p class="lead">Let our Local Search Positioning Technology™ put you in front of patients searching for a dentist right now!</p>
+    <div class="skybar">We Attract New Patient Inquiries by Ranking You #1 Everywhere</div>
+    <p class="lead" style="margin-bottom:0;font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-size:20px">How Our Local Search Positioning Technology™ Works:</p>
+
+    <div class="flow2">
+      <div class="card serp">
+        <div class="sbar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>dentist near me</div>
+        <div class="tabs"><b>All</b><span>Maps</span><span>Images</span><span>Reviews</span><span>More</span></div>
+        <div class="lp">
+          <div>
+            <div style="font-weight:800;font-size:14px;margin-bottom:8px">Businesses</div>
+            <div class="biz top"><div class="rk">1</div><div><b>Brightview Dental</b><span class="stars">★★★★★</span> 4.9 (312)<br>Dentist · <span class="op">Open</span> · Closes 6 PM</div></div>
+            <div class="biz"><div class="rk" style="background:#94a3b8">2</div><div><b>Maple Family Dentistry</b><span class="stars">★★★★☆</span> 4.5 (88)<br>Dentist · <span class="op">Open</span> · Closes 5 PM</div></div>
+            <div class="biz"><div class="rk" style="background:#94a3b8">3</div><div><b>Downtown Dental Care</b><span class="stars">★★★★☆</span> 4.3 (41)<br>Dentist · <span class="op">Open</span> · Closes 5 PM</div></div>
+          </div>
+          <div class="map">
+            <svg viewBox="0 0 130 190" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="130" height="190" fill="#eef3ea"/>
+              <path d="M0 60 L130 40 M0 130 L130 150 M40 0 L55 190 M95 0 L85 190" stroke="#fff" stroke-width="7"/>
+              <path d="M0 95 L130 100" stroke="#fde68a" stroke-width="6"/>
+              <rect x="64" y="110" width="22" height="30" rx="3" fill="#cfe8c8"/>
+              <g transform="translate(60 60)"><path d="M0 0c-7 0-12 5-12 12 0 9 12 20 12 20s12-11 12-20c0-7-5-12-12-12z" fill="#EA4335"/><circle cx="0" cy="12" r="4.5" fill="#fff"/></g>
+              <g transform="translate(25 128)"><path d="M0 0c-5 0-9 4-9 9 0 7 9 15 9 15s9-8 9-15c0-5-4-9-9-9z" fill="#94a3b8"/></g>
+              <g transform="translate(105 150)"><path d="M0 0c-5 0-9 4-9 9 0 7 9 15 9 15s9-8 9-15c0-5-4-9-9-9z" fill="#94a3b8"/></g>
+              <rect x="38" y="38" width="62" height="16" rx="4" fill="#fff" stroke="#e5e7eb"/>
+              <text x="69" y="49" font-size="7.5" font-family="Montserrat" font-weight="700" text-anchor="middle" fill="#111">Brightview ★4.9</text>
+            </svg>
+          </div>
+        </div>
+        <div class="ai">
+          <b class="h"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1A73E8"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg>AI Answer</b>
+          Brightview Dental is a top-rated family and cosmetic dental practice known for gentle care, same-week new-patient appointments, and hundreds of 5-star reviews from local families.
+          <div style="margin-top:6px"><a>Brightview Dental | Family &amp; Cosmetic Dentist</a></div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="techBox">
+        <div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.4" stroke-linecap="round"><path d="M4 20V14M10 20V9M16 20V12M22 20V5"/><path d="M3 10l6-5 5 4 7-6"/></svg></div>
+        <h3>Our Ranking Technology</h3>
+        <p>Higher rankings put your practice in front of people actively searching for cleanings, emergency care, implants, Invisalign and cosmetic dentistry.</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card inq">
+        <div class="top"><div class="ci"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1A73E8"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-4 3-6.5 7-6.5s7 2.5 7 6.5z"/><path d="M15.5 14.2c3.3-.4 6.5 1.4 6.5 5.8h-4.6"/></svg></div><div><h4>More Patient Inquiries</h4><p>Higher visibility brings more calls, bookings and new patients.</p></div></div>
+        <div class="it"><div class="ii" style="background:#16A34A">📞</div><div><b>New Call</b><q>"Hi, are you taking new patients? I chipped a tooth this morning."</q></div><span>10:24 AM</span></div>
+        <div class="it"><div class="ii" style="background:#2563EB">✉</div><div><b>Website Inquiry</b><q>"I'd like to book an Invisalign consultation."</q></div><span>9:41 AM</span></div>
+        <div class="it"><div class="ii" style="background:#7C3AED">📝</div><div><b>Contact Form</b><q>"Looking for a family dentist for the four of us."</q></div><span>8:17 AM</span></div>
+        <div class="it"><div class="ii" style="background:#0EA5E9">💬</div><div><b>Message Request</b><q>"Do you offer teeth whitening? How much?"</q></div><span>Yesterday</span></div>
+        <div class="it"><div class="ii" style="background:#16A34A">✓</div><div><b>Appointment Scheduled</b><q>New Patient Exam + Cleaning</q></div><span>Yesterday</span></div>
+      </div>
+    </div>
+    <div class="result"><small>The Result:</small><b>More Inbound Calls, Website Inquiries &amp; New Patients</b></div>
+  </div>
+</section>
+
+<!-- ===== STEP 3 ===== -->
+<div class="stephead"><div class="n">Step 3:</div><h2>24/7 Done-For-You Appointment Scheduling</h2></div>
+<section class="sec bg" style="padding-top:10px">
+  <div class="wrap">
+    <p class="lead">We handle every inquiry, qualify it, then book, confirm and remind — so patients actually show up and begin care.</p>
+    <div class="skybar">We Handle Every Inquiry with 24/7 Coverage + Book, Confirm &amp; Remind</div>
+    <div class="flow3">
+      <div class="card channels">
+        <h4>Every Inquiry</h4>
+        <div class="chn"><i style="background:#16A34A">📞</i>Phone Calls</div>
+        <div class="chn"><i style="background:#2563EB">💬</i>Text Messages</div>
+        <div class="chn"><i style="background:#7C3AED">🌐</i>Website &amp; Chat</div>
+        <div class="chn"><i style="background:#0EA5E9">✉</i>Emails</div>
+        <div class="chn"><i style="background:#DB2777">📱</i>Social DMs</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="blueBox coord">
+        <h3 style="font-size:23px">24/7 Patient Coordinator</h3>
+        <p>AI + human team, trained on your practice</p>
+        <ul>
+          <li><span>1</span>Responds fast — day, night &amp; weekends</li>
+          <li><span>2</span>Qualifies: new vs. existing, need, urgency, insurance details</li>
+          <li><span>3</span>Books straight into your schedule</li>
+          <li><span>4</span>Confirms &amp; sends reminders to cut no-shows</li>
+          <li><span>5</span>Follows up until they start care</li>
+        </ul>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card tbl">
+        <h4>New Patient Schedule <em>This Week</em></h4>
+        <div class="appt"><div class="d">Mon<small>8:00 AM</small></div><div class="dot" style="background:#DC2626"></div><div><b>Emergency — Toothache</b><span>James Carter · Confirmed ✓</span></div></div>
+        <div class="appt"><div class="d">Mon<small>3:30 PM</small></div><div class="dot" style="background:#1A73E8"></div><div><b>New Patient Exam + X-rays</b><span>Lena Brooks · Reminder sent</span></div></div>
+        <div class="appt"><div class="d">Tue<small>11:00 AM</small></div><div class="dot" style="background:#F59E0B"></div><div><b>Implant Consultation</b><span>Tom Nguyen · Confirmed ✓</span></div></div>
+        <div class="appt"><div class="d">Wed<small>9:30 AM</small></div><div class="dot" style="background:#16A34A"></div><div><b>Family Cleanings (x3)</b><span>The Reyes Family · Confirmed ✓</span></div></div>
+        <div class="appt"><div class="d">Thu<small>4:00 PM</small></div><div class="dot" style="background:#7C3AED"></div><div><b>Whitening Consult</b><span>Aisha Khan · Reminder sent</span></div></div>
+      </div>
+    </div>
+    <div class="result"><small>The Result =</small><b>More New Patients in the Chair — Not Just Appointments on the Calendar</b></div>
+  </div>
+</section>
+
+<!-- ===== STEP 4 ===== -->
+<div class="stephead"><div class="n">Step 4:</div><h2>Patient Reviews, Referrals &amp; Recall</h2></div>
+<section class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <p class="lead">Every happy patient becomes more reviews, more family referrals and more recall visits.</p>
+    <div class="skybar" style="margin-bottom:34px">We Multiply Every Patient into Reviews, Referrals &amp; Repeat Visits</div>
+
+    <div class="ex4">
+      <div>
+        <div class="skybar">Review Request Example:</div>
+        <div class="card pair">
+          <div class="phone">
+            <div class="who"><i>BD</i>Brightview Dental</div>
+            <div class="bub out">Thanks for visiting today, Lena! 😊 How was your experience with Dr. Lee? If you have 30 seconds, a quick Google review would mean the world to our team ⭐</div>
+            <div class="bub in">Of course! Everyone was so kind. Leaving one now.</div>
+          </div>
+          <div>
+            <div style="font-weight:800;font-size:13px;margin-bottom:4px">Brightview Dental <span class="stars">★★★★★</span> 4.9</div>
+            <div class="rev"><b>Lena B.</b> <span class="stars">★★★★★</span><p>Best dental visit I've ever had. Gentle, on time, and they explained everything.</p></div>
+            <div class="rev"><b>James C.</b> <span class="stars">★★★★★</span><p>Got me in same day for a toothache. Lifesavers!</p></div>
+            <div class="rev"><b>Tom N.</b> <span class="stars">★★★★★</span><p>Super clear about implant costs and options. Highly recommend.</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skybar">Family Referral Example:</div>
+        <div class="card pair">
+          <div class="mail">
+            <div class="hd">From: Brightview Dental<b>Thanks for choosing us, Tom!</b></div>
+            <p>Hi Tom,</p>
+            <p>Thank you for trusting us with your smile. Do you have family or friends looking for a dentist they can trust?</p>
+            <p>Share our details and we'll take great care of them — new patients are welcome every week.</p>
+            <span class="cta">Refer a Friend →</span>
+          </div>
+          <div class="phone">
+            <div class="who"><i style="background:#f59e0b">MN</i>Mai Nguyen</div>
+            <div class="bub in">Hi! My brother Tom said you're amazing. Can I book a cleaning for me and my two kids?</div>
+            <div class="bub out">We'd love to see you all, Mai! Saturday 10 AM works for 3 back-to-back visits 😊</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width:560px;margin:30px auto 0">
+      <div class="skybar">Recall &amp; Treatment Reactivation:</div>
+      <div class="card" style="padding:18px;margin-top:14px">
+        <div class="mail">
+          <div class="hd">From: Brightview Dental · Recall<b>Time for your 6-month check-up, Robert 🦷</b></div>
+          <p>Hi Robert, it's been six months since your last cleaning. Regular check-ups catch small issues before they become big ones.</p>
+          <span class="cta">Book My Cleaning →</span>
+        </div>
+        <div class="confirm"><i>✓</i><div><b>Recall Visit Booked</b><br>Robert Johnson · Cleaning + Exam · Thu 10:30 AM</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROI ===== -->
+<div class="band"><h2>ROI Breakdown &amp; Expectations</h2></div>
+<section class="sec bg">
+  <div class="wrap">
+    <div class="skybar">Month By Month ROI Calculations</div>
+    <p class="disc" style="font-size:13.5px">Please note the figures below are averages for marketing purposes only, are not a guarantee of results and can vary market to market and practice to practice.</p>
+    <div class="roiCtl">
+      <label>Avg. first-year value per new patient ($) <input id="val" type="number" min="100" step="50" value="1200"></label>
+      <label>Monthly investment ($) <input id="fee" type="number" min="0" step="1" value="997"></label>
+    </div>
+    <div class="tblwrap">
+    <table class="roiTable" id="roi">
+      <thead>
+        <tr><th rowspan="2">Period</th><th colspan="2" class="c-con" style="background:#7a5c00">Conservative</th><th colspan="2" style="background:#14532d">Base Case</th><th colspan="2" style="background:#1e3a8a">Upside</th></tr>
+        <tr><th>New Patients</th><th>Revenue</th><th>New Patients</th><th>Revenue</th><th>New Patients</th><th>Revenue</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    </div>
+    <p class="disc">Revenue = new patients × average first-year value per patient. Enter your practice's own number. Forecast covers new patients only — it excludes existing-patient production, recall income and lifetime patient value.</p>
+  </div>
+</section>
+
+<!-- ===== PATIENTS NOT APPOINTMENTS ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="skybar">Patients — Not Appointments</div>
+    <div class="myth">
+      <div class="card"><div class="k" style="color:#b91c1c">The Myth</div><h3>“More website traffic means more production.”</h3><p>Clicks, leads and booked appointments are not the result. Empty chairs stay empty when inquiries aren't answered, confirmed and followed up until the patient starts care.</p></div>
+      <div class="card" style="border-color:#b9d6ff;background:#f5faff"><div class="k" style="color:var(--blue2)">The Truth</div><h3>New patients beginning care is the only number that matters.</h3><p>That's why we combine database reactivation, local search, 24/7 scheduling and reviews &amp; referrals into one system — and guarantee the outcome.</p></div>
+    </div>
+    <div class="tblwrap">
+    <table class="cmp">
+      <thead><tr><th></th><th>Dental Marketing Agencies</th><th>Patient Lead Vendors</th><th>Dental Software / CRM</th><th class="us">The New Patient Pipeline™</th></tr></thead>
+      <tbody>
+        <tr><td>Reactivates your existing patient database</td><td class="no">—</td><td class="no">—</td><td>DIY</td><td class="us">✓ Done for you</td></tr>
+        <tr><td>Ranks you on Google &amp; AI search</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td><td class="us">✓</td></tr>
+        <tr><td>Answers &amp; books inquiries 24/7</td><td class="no">—</td><td class="no">—</td><td>DIY</td><td class="us">✓</td></tr>
+        <tr><td>Confirms, reminds &amp; follows up to start of care</td><td class="no">—</td><td class="no">—</td><td>DIY</td><td class="us">✓</td></tr>
+        <tr><td>Reviews, family referrals &amp; recall</td><td>Sometimes</td><td class="no">—</td><td>DIY</td><td class="us">✓</td></tr>
+        <tr><td>Measured on new patients</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="us">✓ Guaranteed</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section class="sec bg guar center" style="padding-top:40px">
+  <div class="wrap">
+    <div class="rule" style="margin-top:0"></div>
+    <h2>We Guarantee <u>30 New Patients</u> in 90 Days or Your Money Back</h2>
+    <p class="sub">This is hands down the best system to consistently grow your practice!</p>
+    <svg class="seal" viewBox="0 0 220 220" role="img" aria-label="Money back guarantee seal">
+      <defs>
+        <radialGradient id="gold" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#FFE38A"/><stop offset=".55" stop-color="#F5B301"/><stop offset="1" stop-color="#B27300"/></radialGradient>
+        <path id="tArc" d="M53 110 A57 57 0 0 1 167 110"/>
+        <path id="bArc" d="M40 110 A70 70 0 0 0 180 110"/>
+      </defs>
+      <g fill="url(#gold)">
+        <path d="M214.0 110.0 L203.2 122.3 L210.5 136.9 L196.8 146.0 L200.1 162.0 L184.6 167.2 L183.5 183.5 L167.2 184.6 L162.0 200.1 L146.0 196.8 L136.9 210.5 L122.3 203.2 L110.0 214.0 L97.7 203.2 L83.1 210.5 L74.0 196.8 L58.0 200.1 L52.8 184.6 L36.5 183.5 L35.4 167.2 L19.9 162.0 L23.2 146.0 L9.5 136.9 L16.8 122.3 L6.0 110.0 L16.8 97.7 L9.5 83.1 L23.2 74.0 L19.9 58.0 L35.4 52.8 L36.5 36.5 L52.8 35.4 L58.0 19.9 L74.0 23.2 L83.1 9.5 L97.7 16.8 L110.0 6.0 L122.3 16.8 L136.9 9.5 L146.0 23.2 L162.0 19.9 L167.2 35.4 L183.5 36.5 L184.6 52.8 L200.1 58.0 L196.8 74.0 L210.5 83.1 L203.2 97.7Z"/>
+      </g>
+      <circle cx="110" cy="110" r="80" fill="#3a2a10"/>
+      <circle cx="110" cy="110" r="74" fill="url(#gold)"/>
+      <circle cx="110" cy="110" r="52" fill="none" stroke="#3a2a10" stroke-width="2"/>
+      <text font-family="Montserrat" font-weight="800" font-size="15" fill="#3a2a10" letter-spacing="3"><textPath href="#tArc" startOffset="50%" text-anchor="middle">GUARANTEE</textPath></text>
+      <text font-family="Montserrat" font-weight="800" font-size="15" fill="#3a2a10" letter-spacing="3"><textPath href="#bArc" startOffset="50%" text-anchor="middle">GUARANTEE</textPath></text>
+      <rect x="18" y="88" width="184" height="46" rx="6" fill="#1b1407"/>
+      <path d="M18 88 L6 111 L18 134Z M202 88 L214 111 L202 134Z" fill="#1b1407"/>
+      <text x="110" y="120" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="25" fill="#F5B301">MONEY BACK</text>
+    </svg>
+    <p class="body">If you use our system and don't get 30 new patients in 90 days, we will give you a full refund of the management fees paid for your first 90 days. We are so confident that our program will fill your chairs and help you grow production.</p>
+    <p class="fine">Guarantee subject to applicable law and the written client agreement. Client responsibilities: follow applicable healthcare rules, maintain chair and provider capacity, and follow the agreed intake and new-patient process.</p>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<div class="band" id="pricing"><h2>Pricing</h2></div>
+<section class="sec bg" style="padding-top:20px">
+  <div class="wrap">
+    <div class="plans">
+      <div class="plan">
+        <div class="ph"><small>🚀 Full System Deployment</small><h3>The New Patient Pipeline™</h3><div class="wi">What's Included:</div></div>
+        <ul>
+          <li><i class="cm">✓</i>1:1 Onboarding &amp; Check-In Calls</li>
+          <li><i class="cm">✓</i>Dedicated Account Manager</li>
+          <li><i class="cm">✓</i>Weekly Reports &amp; Updates</li>
+          <li><i class="cm">✓</i><u>New Patient Sprint</u> via Call/SMS/Email Every 2 Weeks<small>(For Inactive Patients, Unfinished Treatment &amp; Old Inquiries)</small></li>
+          <li><i class="cm">✓</i><u>#1 Ranking</u> via Google &amp; A.I. Search Management:
+            <span class="subl">- 100 Point Google Business Profile Keyword Audit</span>
+            <span class="subl">- Local Competitor Analysis</span>
+            <span class="subl">- Review Management &amp; Generation</span>
+            <span class="subl">- Google Business Profile Optimization</span></li>
+          <li><i class="cm">✓</i><u>Done-For-You</u> 24/7 Calling, Texting, Emails &amp; Social Messaging<small>for Inbound &amp; Outbound</small>
+            <span class="subl">- New Patient Qualification &amp; Intake</span>
+            <span class="subl">- Patient Inquiry Answering &amp; Support</span>
+            <span class="subl">- Appointment Scheduling, Confirmations &amp; Reminders</span></li>
+          <li><i class="cm">✓</i><u>Done-For-You</u> Review, Family Referral &amp; Recall Generation<small>(For Existing Patients)</small></li>
+        </ul>
+        <div class="pf">
+          <div class="price"><sup>$</sup>997</div>
+          <div class="per">Billed Monthly</div>
+          <div class="note">With Guaranteed New Patients + Cancel Anytime</div>
+          <div class="note2">(Phone Number &amp; Usage Not Included)</div>
+          <a class="btn js-book" href="#">Get Started</a>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="ph"><small>🚀 Momentum Offer</small><h3>7-Day New Patient Sprint</h3><div class="wi">What's Included:</div></div>
+        <ul>
+          <li><i class="cm">✓</i>1:1 Onboarding</li>
+          <li><i class="cm">✓</i>Dedicated Account Manager</li>
+          <li><i class="cm">✓</i>7-Day Sprint Report &amp; Outcome Meeting</li>
+          <li><i class="cm">✓</i>Done-For-You New Patient Sprint via Call/SMS/Email<small>(For Inactive Patients, Unfinished Treatment &amp; Old Inquiries)</small></li>
+          <li><i class="cm">✓</i><u>Done-For-You</u> Replies &amp; Scheduling for Sprint Responses
+            <span class="subl">- Patient Qualification &amp; Intake</span>
+            <span class="subl">- Question Answering &amp; Support</span>
+            <span class="subl">- Appointment Scheduling &amp; Reminders</span></li>
+          <li><i class="cm">✓</i>See Results Before You Commit<small>(Step 1 of the system, run free)</small></li>
+        </ul>
+        <div class="pf">
+          <div class="price">FREE</div>
+          <div class="per">7-Day Risk Free Trial</div>
+          <div class="note2">(Phone Number &amp; Usage Not Included)</div>
+          <a class="btn js-book" href="#">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="addons">
+      <div class="card addon">
+        <div class="ai2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <div><h4>Add-On: Smart Website</h4><p>Conversion-ready practice website — for outdated or missing sites.</p></div>
+        <div class="pr">$497<small>one-time</small></div>
+      </div>
+      <div class="card addon">
+        <div class="ai2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#1A73E8"/></svg></div>
+        <div><h4>Add-On: Daily Social Posting</h4><p>Daily posts across your profiles for an active, trusted presence.</p></div>
+        <div class="pr">$197<small>per month</small></div>
+      </div>
+    </div>
+    <p class="resp">$997/mo flat — monthly, no tiers. The momentum offer runs Step 1 free up front.</p>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final">
+  <h2>Ready to Fill Your Empty Chairs?</h2>
+  <p>Book a free 30-minute strategy session. We'll show you how many patients are sitting in your database right now — and how we'll get you 30 new patients in 90 days.</p>
+  <a class="btn js-book" href="#">Book My Free Strategy Session</a>
+</section>
+<footer>© <span id="yr">2026</span> Magdio · Pannovites Private Limited · All rights reserved.<br>Results vary by market and practice. Example names, practices and messages on this page are illustrative.</footer>
+
+<script>
+// Booking link for every CTA
+const BOOK_URL = "https://go.magdio.com/book";
+document.querySelectorAll('.js-book').forEach(a=>{a.href=BOOK_URL;a.target="_blank";a.rel="noopener"});
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// ROI table
+const SCEN={con:[10,10,10],base:[12,15,18],up:[15,22,29]};
+const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
+function renderROI(){
+  const v=Math.max(0,+document.getElementById('val').value||0);
+  const f=Math.max(0,+document.getElementById('fee').value||0);
+  const tb=document.querySelector('#roi tbody');let h='';const tot={con:0,base:0,up:0};
+  for(let m=0;m<3;m++){
+    h+=`<tr><td>Month ${m+1}</td>`;
+    for(const k of ['con','base','up']){const p=SCEN[k][m];tot[k]+=p;h+=`<td class="c-${k}">${p}</td><td>${fmt(p*v)}</td>`}
+    h+='</tr>';
+  }
+  h+='<tr class="tot"><td>90-Day Total</td>';
+  for(const k of ['con','base','up']) h+=`<td>${tot[k]}</td><td>${fmt(tot[k]*v)}</td>`;
+  h+='</tr><tr><td>Investment (3 months)</td>';
+  for(let i=0;i<3;i++) h+=`<td colspan="2">${fmt(f*3)}</td>`;
+  h+='</tr><tr class="tot"><td>Return on Investment</td>';
+  for(const k of ['con','base','up']) h+=`<td colspan="2">${f>0?(tot[k]*v/(f*3)).toFixed(1)+'x':'—'}</td>`;
+  tb.innerHTML=h+'</tr>';
+}
+['val','fee'].forEach(id=>document.getElementById(id).addEventListener('input',renderROI));
+renderROI();
+</script>
+</body>
+</html>
