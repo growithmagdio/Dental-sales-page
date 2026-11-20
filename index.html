@@ -129,8 +129,9 @@ u{text-underline-offset:4px}
 .ck.on{background:var(--blue);border-color:var(--blue);color:#fff}
 
 /* step 2 */
-.flow2{display:grid;grid-template-columns:1.35fr auto .8fr auto 1.15fr;gap:14px;align-items:center;max-width:1080px;margin:34px auto 0}
-.serp{padding:16px}
+.flow2{display:grid;grid-template-columns:1.6fr auto .75fr auto 1.1fr;gap:14px;align-items:center;max-width:1080px;margin:34px auto 0}
+.serp{padding:10px;overflow:hidden}
+.serpimg{display:block;width:100%;height:auto;border-radius:10px}
 .sbar{display:flex;align-items:center;gap:10px;border:1px solid #dfe1e5;border-radius:999px;padding:9px 14px;font-size:13px;box-shadow:0 1px 6px rgba(32,33,36,.12)}
 .tabs{display:flex;gap:14px;font-size:11.5px;color:#5f6368;margin:10px 0 12px;padding-left:4px}
 .tabs b{color:var(--blue);border-bottom:2px solid var(--blue);padding-bottom:3px}
@@ -445,36 +446,7 @@ footer{background:#000;color:#9ca3af;text-align:center;font-size:12px;padding:22
     <p class="lead" style="margin-bottom:0;font-family:Ubuntu,Montserrat,system-ui,sans-serif;font-size:20px">How Our Local Search Positioning Technology™ Works:</p>
 
     <div class="flow2">
-      <div class="card serp">
-        <div class="sbar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>dentist near me</div>
-        <div class="tabs"><b>All</b><span>Maps</span><span>Images</span><span>Reviews</span><span>More</span></div>
-        <div class="lp">
-          <div>
-            <div style="font-weight:800;font-size:14px;margin-bottom:8px">Businesses</div>
-            <div class="biz top"><div class="rk">1</div><div><b>Brightview Dental</b><span class="stars">★★★★★</span> 4.9 (312)<br>Dentist · <span class="op">Open</span> · Closes 6 PM</div></div>
-            <div class="biz"><div class="rk" style="background:#94a3b8">2</div><div><b>Maple Family Dentistry</b><span class="stars">★★★★☆</span> 4.5 (88)<br>Dentist · <span class="op">Open</span> · Closes 5 PM</div></div>
-            <div class="biz"><div class="rk" style="background:#94a3b8">3</div><div><b>Downtown Dental Care</b><span class="stars">★★★★☆</span> 4.3 (41)<br>Dentist · <span class="op">Open</span> · Closes 5 PM</div></div>
-          </div>
-          <div class="map">
-            <svg viewBox="0 0 130 190" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <rect width="130" height="190" fill="#eef3ea"/>
-              <path d="M0 60 L130 40 M0 130 L130 150 M40 0 L55 190 M95 0 L85 190" stroke="#fff" stroke-width="7"/>
-              <path d="M0 95 L130 100" stroke="#fde68a" stroke-width="6"/>
-              <rect x="64" y="110" width="22" height="30" rx="3" fill="#cfe8c8"/>
-              <g transform="translate(60 60)"><path d="M0 0c-7 0-12 5-12 12 0 9 12 20 12 20s12-11 12-20c0-7-5-12-12-12z" fill="#EA4335"/><circle cx="0" cy="12" r="4.5" fill="#fff"/></g>
-              <g transform="translate(25 128)"><path d="M0 0c-5 0-9 4-9 9 0 7 9 15 9 15s9-8 9-15c0-5-4-9-9-9z" fill="#94a3b8"/></g>
-              <g transform="translate(105 150)"><path d="M0 0c-5 0-9 4-9 9 0 7 9 15 9 15s9-8 9-15c0-5-4-9-9-9z" fill="#94a3b8"/></g>
-              <rect x="38" y="38" width="62" height="16" rx="4" fill="#fff" stroke="#e5e7eb"/>
-              <text x="69" y="49" font-size="7.5" font-family="Montserrat" font-weight="700" text-anchor="middle" fill="#111">Brightview ★4.9</text>
-            </svg>
-          </div>
-        </div>
-        <div class="ai">
-          <b class="h"><svg width="16" height="16" viewBox="0 0 24 24" fill="#1A73E8"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg>AI Answer</b>
-          Brightview Dental is a top-rated family and cosmetic dental practice known for gentle care, same-week new-patient appointments, and hundreds of 5-star reviews from local families.
-          <div style="margin-top:6px"><a>Brightview Dental | Family &amp; Cosmetic Dentist</a></div>
-        </div>
-      </div>
+      <div class="card serp"><img class="serpimg" src="google-search-dentist.webp" width="637" height="585" alt="Google search results for a local dentist showing the map pack and AI Overview"></div>
       <div class="arrow">→</div>
       <div class="techBox">
         <div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2.4" stroke-linecap="round"><path d="M4 20V14M10 20V9M16 20V12M22 20V5"/><path d="M3 10l6-5 5 4 7-6"/></svg></div>
